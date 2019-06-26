@@ -1,0 +1,37 @@
+{
+  "sc":{
+    "name":"AUDIO_MIXER",
+    "include":"audio_mixer.h",
+    "uid":"AUDIO_MIXER_UID",
+    "rpc":"audio_mixerRpc",
+    "ver":"AUDIO_MIXER_VER",
+    "loop":""
+  },
+  "module":{
+    "name":"AUDIO_MIXER",
+    "version":"1.0",
+    "className":"AudioMixer",
+    "instanceName":"AudioMixer",
+    "description":"Audio Mixer",
+    "author":"",
+    "parameters":[
+      {"name":"CHANNELS", "min":"2", "max":"4", "inc":"1", "def":"2"}
+    ]
+  },
+  "hw":[
+    {
+      "interface":"avalon_slave",
+      "name":"avalon_slave",
+      "parameters":[
+        {"signal":"address", "name":"SPAN", "value":"3"},
+        {"signal":"read_data", "name":"BIT_WIDTH", "value":"32"},
+        {"signal":"write_data", "name":"BIT_WIDTH", "value":"32"}
+      ]
+    },
+    {"interface":"audio_dst", "name":"audio_dst0", "type":"stream"},
+    {"interface":"audio_dst", "name":"audio_dst1", "type":"stream"},
+    {"interface":"audio_dst", "name":"audio_dst2", "type":"stream"},
+    {"interface":"audio_dst", "name":"audio_dst3", "type":"stream"},
+    {"interface":"audio_src", "name":"audio_src", "type":"stream"}
+  ]
+}
